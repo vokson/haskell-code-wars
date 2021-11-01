@@ -1,7 +1,4 @@
 module Disemvowel where
 
 disemvowel :: String -> String
-disemvowel [] = []
-disemvowel (x:xs)
-    | elem x "AEIOUaeiou" = disemvowel xs
-    | otherwise = x : (disemvowel xs)
+disemvowel str = [x | x <- str, not (x `elem` "aoeuiAOEUI")]
